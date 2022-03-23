@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+
+@{ 
+    int temperature = 25;
+
+}
+
+<html>
+
+<body>
+    <h1>@ViewData["Title"]</h1>
+    @{
+        if (temperature >= 30)
+        {
+            <p>It's hot outside:>= @temperature degrees</p>
+        }
+        else if (temperature >= 20)
+        {
+            <p>It's warm outside:>= @temperature degrees</p>
+        }
+        else
+        {
+            <p>It's cool outside:less than @temperature degrees</p>
+        }
+
+    }
+
+    <br />
+    <br />
+    @{
+        var i = 0;
+        while (i < 5)
+        {
+            i += 1;
+            <p>Line @i</p>
+        }
+    }
+    <br />
+    <br />
+    @{
+        List<string> names = new List<string>()
+{
+        "John Doe",
+        "Jane Doe",
+        "Joe Doe",
+        "Jenna Doe",
+        "Doggy Doe"
+    };
+<ul>
+    @{
+       int counter = 0;
+    }
+    @do
+    {
+        <li>@names[counter++]</li>
+    } while (counter < names.Count);
+</ul>
+    }
+</body>
+</html>

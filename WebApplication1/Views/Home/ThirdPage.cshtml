@@ -1,0 +1,32 @@
+﻿@using System.Collections;
+@model TaxiServiceBD.Models.Category;
+<h2>ForEach loop</h2>
+
+
+
+
+<br />
+
+
+
+@{
+
+    var marks = Enumerable.Range(0, 5);
+
+
+
+    foreach (var item in marks)
+
+    {
+        @item
+        <br />
+
+    }
+
+    <br />
+    <br />
+    <div class="form-group">
+        <label asp-for="Id" class="control-label"></label>
+        <select asp-for="Id" class="form-control" asp-items="ViewBag.Id"></select>
+    </div>
+}

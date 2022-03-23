@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<html>
+<body>
+    @for (var i = 10; i < 10; i++)
+    {<p>This is @i word</p>}
+    <br />
+    <br />
+    <br />
+    <ul>
+        @{
+            string[] list = new string[5] { "a", "b", "c", "d", "e" };
+
+
+            foreach (var x in list)
+            {
+                <li>@x</li>
+            }
+        }
+    </ul>
+    <br />
+    <br />
+    @{
+        var str = "";
+        if (DateTime.Now.Hour > 12)
+        { str = "Good Evening"; }
+        else
+        { str = "Good Morning"; }
+    }
+    <p>The result is @str</p>
+</body>
+</html>
